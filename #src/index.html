@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="ru">
+@@include('_head.html',{
+"title":"DREAM CAR"
+})
+<body>
+<div class="wrapper">
+@@include('_header.html',{})
+<main class="page" data-spollers>
+	<section class="page__about about">
+		<div class="about__container _container">
+			<div class="about__content">
+				<!--!Лучше сделать через спаны-->
+				<h1 class="about__title title"><span>ШЬЁМ ЭВА КОВРИКи</span> В БРЯНСКЕ</h1>
+				<div class="about__text">
+					<p>
+						Делаем только качественную продукцию, именно поэтому работаем только с проверенным
+						полотном и фурнитурой.
+					</p>
+					<p>
+						Перед покупкой вы сможете примерить комплект ковриков к своему автомобилю,
+						а после неё — мы даём гарантию на 1 год.
+					</p>
+				</div>
+				<div class="about__button btn" data-da=".about-actions,991.98,first">составить заказ</div>
+			</div>
+			<div class="about__slider slider-about">
+				<div class="slider-about__body _swiper">
+					<div class="slider-about__slide _ibg">
+						<img src="img/about-slider/01.jpg" alt="Image">
+					</div>
+					<div class="slider-about__slide _ibg">
+						<img src="img/about-slider/02.jpg" alt="Image">
+					</div>
+					<div class="slider-about__slide _ibg">
+						<img src="img/about-slider/03.jpg" alt="Image">
+					</div>
+				</div>
+				<div class="slider-about__controls">
+					<div class="slider-arrow slider-arrow_prev">
+						<img src="img/icons/arrow.svg" alt="Назад">
+					</div>
+					<div class="slider-about__pagination" data-da=".about-actions, 991.98"></div>
+					<div class="slider-arrow slider-arrow_next">
+						<img src="img/icons/arrow.svg" alt="Вперёд">
+					</div>
+				</div>
+				<div class="slider-about__actions about-actions">
+					<a href="tel:+79308200096" class="about-actions__button btn btn_black">
+						позвонить
+					</a>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="page__ordering ordering section">
+		<div class="section__container _container">
+			<div class="section__wrapper">
+				<button type="button" class="ordering__spoller-button spoller-button title" data-spoller><span>комплектация</span> и цвет</button>
+				<div class="ordering__body">
+					<div class="section__text">
+						<p>Создайте собственный дизайн ковриков!</p>
+						<p>Выберите форму ячейки, цвет полотна и окантовки, а затем подходящую вам комплектацию!</p>
+					</div>
+					<div class="ordering__row">
+						<form id="ordering-form" action="https://echo.htmlacademy.ru/" method="post" class="ordering-form">
+							<h2 class="ordering-form__title">Форма ячейки:</h2>
+							<div class="ordering-form__cells">
+								<label class="radio radio_cell">
+									<input type="radio" name="type-cell" value="rhombus"
+										class="radio__input _visually-hidden">
+									<span class="radio__span radio__span_rhombus"></span>
+									Ромб
+								</label>
+								<label class="radio radio_cell">
+									<input type="radio" name="type-cell" value="honeycomb"
+										class="radio__input _visually-hidden">
+									<span class="radio__span radio__span_honeycomb"></span>
+									Сота
+								</label>
+							</div>
+							<h2 class="ordering-form__title">Цвет полотна:</h2>
+							<div class="canvas-color-slider color-slider">
+								<button type="button" class="color-slider__arrow slider-arrow slider-arrow_prev _ibg">
+									<img src="img/icons/arrow.svg" alt="Назад">
+								</button>
+								<div class="canvas-color-slider__body color-slider__body _swiper">
+									<label class="color-slider__slide radio">
+										<!--Чёрный цвет-->
+										<input type="radio" name="canvas-color" value="black" class="radio__input _visually-hidden">
+										<span class="radio__span radio__span_black"></span>
+									</label>
+									<label class="color-slider__slide radio">
+										<!--Серый цвет-->
+										<input type="radio" name="canvas-color" value="gray" class="radio__input _visually-hidden">
+										<span class="radio__span radio__span_gray"></span>
+									</label>
+									<label class="color-slider__slide radio">
+										<!--Коричневый цвет-->
+										<input type="radio" name="canvas-color" value="brown" class="radio__input _visually-hidden">
+										<span class="radio__span radio__span_brown"></span>
+									</label>
+									<label class="color-slider__slide radio">
+										<!--Латте цвет-->
+										<input type="radio" name="canvas-color" value="latte" class="radio__input _visually-hidden">
+										<span class="radio__span radio__span_latte"></span>
+									</label>
+									<label class="color-slider__slide radio">
+										<!--Песочный цвет-->
+										<input type="radio" name="canvas-color" value="sand" class="radio__input _visually-hidden">
+										<span class="radio__span radio__span_sand"></span>
+									</label>
+									<label class="color-slider__slide radio">
+										<!--Тёмно-зелёный цвет-->
+										<input type="radio" name="canvas-color" value="dark-green" class="radio__input _visually-hidden">
+										<span class="radio__span radio__span_dark-green"></span>
+									</label>
+									<label class="color-slider__slide radio">
+										<!--Зелёный  цвет-->
+										<input type="radio" name="canvas-color" value="green" class="radio__input _visually-hidden">
+										<span class="radio__span radio__span_green"></span>
+									</label>
+									<label class="color-slider__slide radio">
+										<!--Бордовый цвет-->
+										<input type="radio" name="canvas-color" value="burgundy" class="radio__input _visually-hidden">
+										<span class="radio__span radio__span_burgundy"></span>
+									</label>
+									<label class="color-slider__slide radio">
+										<!--Красный цвет-->
+										<input type="radio" name="canvas-color" value="red" class="radio__input _visually-hidden">
+										<span class="radio__span radio__span_red"></span>
+									</label>
+									<label class="color-slider__slide radio">
+										<!--Оранжевый цвет-->
+										<input type="radio" name="canvas-color" value="orange" class="radio__input _visually-hidden">
+										<span class="radio__span radio__span_orange"></span>
+									</label>
+									<label class="color-slider__slide radio">
+										<!--Жёлтый цвет-->
+										<input type="radio" name="canvas-color" value="yellow" class="radio__input _visually-hidden">
+										<span class="radio__span radio__span_yellow"></span>
+									</label>
+									<label class="color-slider__slide radio">
+										<!--Синий цвет-->
+										<input type="radio" name="canvas-color" value="blue" class="radio__input _visually-hidden">
+										<span class="radio__span radio__span_blue"></span>
+									</label>
+									<label class="color-slider__slide radio">
+										<!--Фиолетовый-->
+										<input type="radio" name="canvas-color" value="purple" class="radio__input _visually-hidden">
+										<span class="radio__span radio__span_purple"></span>
+									</label>
+									<label class="color-slider__slide radio">
+										<!--Белый-->
+										<input type="radio" name="canvas-color" value="white" class="radio__input _visually-hidden">
+										<span class="radio__span radio__span_white"></span>
+									</label>
+								</div>
+								<button type="button" class="color-slider__arrow slider-arrow slider-arrow_next _ibg">
+									<img src="img/icons/arrow.svg" alt="Вперёд">
+								</button>
+							</div>
+							<h2 class="ordering-form__title">Цвет окантовки:</h2>
+							<div class="edging-color-slider color-slider">
+								<button type="button" class="color-slider__arrow slider-arrow slider-arrow_prev _ibg">
+									<img src="img/icons/arrow.svg" alt="Назад">
+								</button>
+								<div class="edging-color-slider__body color-slider__body _swiper">
+									<label class="color-slider__slide radio">
+										<!--Чёрный цвет-->
+										<input type="radio" name="edging-color" value="black" class="radio__input _visually-hidden">
+										<span class="radio__span radio__span_black"></span>
+									</label>
+									<label class="color-slider__slide radio">
+										<!--Серый цвет-->
+										<input type="radio" name="edging-color" value="gray" class="radio__input _visually-hidden">
+										<span class="radio__span radio__span_gray"></span>
+									</label>
+									<label class="color-slider__slide radio">
+										<!--Светло серый цвет-->
+										<input type="radio" name="edging-color" value="light-gray" class="radio__input _visually-hidden">
+										<span class="radio__span radio__span_light-gray"></span>
+									</label>
+									<label class="color-slider__slide radio">
+										<!--Коричневый цвет-->
+										<input type="radio" name="edging-color" value="brown" class="radio__input _visually-hidden">
+										<span class="radio__span radio__span_brown"></span>
+									</label>
+									<label class="color-slider__slide radio">
+										<!--Песочный цвет-->
+										<input type="radio" name="edging-color" value="sand" class="radio__input _visually-hidden">
+										<span class="radio__span radio__span_sand"></span>
+									</label>
+									<label class="color-slider__slide radio">
+										<!--Холодный песочный цвет-->
+										<input type="radio" name="edging-color" value="cold-sand" class="radio__input _visually-hidden">
+										<span class="radio__span radio__span_cold-sand"></span>
+									</label>
+									<label class="color-slider__slide radio">
+										<!--Лазурный цвет-->
+										<input type="radio" name="edging-color" value="azure" class="radio__input _visually-hidden">
+										<span class="radio__span radio__span_azure"></span>
+									</label>
+									<label class="color-slider__slide radio">
+										<!--Ярко-синий цвет-->
+										<input type="radio" name="edging-color" value="bright-blue" class="radio__input _visually-hidden">
+										<span class="radio__span radio__span_bright-blue"></span>
+									</label>
+									<label class="color-slider__slide radio">
+										<!--Синий цвет-->
+										<input type="radio" name="edging-color" value="blue" class="radio__input _visually-hidden">
+										<span class="radio__span radio__span_blue"></span>
+									</label>
+									<label class="color-slider__slide radio">
+										<!--Бирюзовый цвет-->
+										<input type="radio" name="edging-color" value="turquoise" class="radio__input _visually-hidden">
+										<span class="radio__span radio__span_turquoise"></span>
+									</label>
+									<label class="color-slider__slide radio">
+										<!--Фиолетовый-->
+										<input type="radio" name="edging-color" value="purple" class="radio__input _visually-hidden">
+										<span class="radio__span radio__span_purple"></span>
+									</label>
+									<label class="color-slider__slide radio">
+										<!--Малиновый цвет-->
+										<input type="radio" name="edging-color" value="сrimson" class="radio__input _visually-hidden">
+										<span class="radio__span radio__span_сrimson"></span>
+									</label>
+									<label class="color-slider__slide radio">
+										<!--Красный цвет-->
+										<input type="radio" name="edging-color" value="red" class="radio__input _visually-hidden">
+										<span class="radio__span radio__span_red"></span>
+									</label>
+									<label class="color-slider__slide radio">
+										<!--Розовый цвет-->
+										<input type="radio" name="edging-color" value="pink" class="radio__input _visually-hidden">
+										<span class="radio__span radio__span_pink"></span>
+									</label>
+									<label class="color-slider__slide radio">
+										<!--Оранжевый цвет-->
+										<input type="radio" name="edging-color" value="orange" class="radio__input _visually-hidden">
+										<span class="radio__span radio__span_orange"></span>
+									</label>
+									<label class="color-slider__slide radio">
+										<!--Жёлтый цвет-->
+										<input type="radio" name="edging-color" value="yellow" class="radio__input _visually-hidden">
+										<span class="radio__span radio__span_yellow"></span>
+									</label>
+									<label class="color-slider__slide radio">
+										<!--Белый-->
+										<input type="radio" name="edging-color" value="white" class="radio__input _visually-hidden">
+										<span class="radio__span radio__span_white"></span>
+									</label>
+									<label class="color-slider__slide radio">
+										<!--Тёмно-зелёный цвет-->
+										<input type="radio" name="edging-color" value="dark-green" class="radio__input _visually-hidden">
+										<span class="radio__span radio__span_dark-green"></span>
+									</label>
+									<label class="color-slider__slide radio">
+										<!--Светло-зелёный цвет-->
+										<input type="radio" name="edging-color" value="light-green" class="radio__input _visually-hidden">
+										<span class="radio__span radio__span_light-green"></span>
+									</label>
+									<label class="color-slider__slide radio">
+										<!--Сине-зелёный цвет-->
+										<input type="radio" name="edging-color" value="blue-green" class="radio__input _visually-hidden">
+										<span class="radio__span radio__span_blue-green"></span>
+									</label>
+								</div>
+								<button type="button" class="color-slider__arrow slider-arrow slider-arrow_next _ibg">
+									<img src="img/icons/arrow.svg" alt="Вперёд">
+								</button>
+							</div>
+							<div class="ordering-form__checkbox ordering-form-checkbox">
+								<div class=" ordering-form-checkbox__title">Металлический подпятник</div>
+								<label class="checkbox">
+									<input type="checkbox" name="metal-thrust-bearing"
+										class="checkbox__input _visually-hidden">
+									<span class="checkbox__span"></span>
+								</label>
+							</div>
+							<div class="ordering-form__quantity ordering-form-quantity">
+								<div class="ordering-form-quantity__title">Фирменные шильды:
+									<input type="text" name="nameplate" form="ordering-form"
+										class="ordering-form-quantity__input" placeholder="фирменные шильды - количество" value="0"> шт.
+								</div>
+								<div class="ordering-form-quantity__actions">
+									<button type="button" class="ordering-form-quantity__minus">–</button>
+									<span class="ordering-form-quantity__separator">/</span>
+									<button type="button" class="ordering-form-quantity__plus">+</button>
+								</div>
+							</div>
+							<div class="ordering-form__checkbox ordering-form-checkbox">
+								<div class="ordering-form-checkbox__title">Передний ряд</div>
+								<label class="checkbox">
+									<input type="checkbox" name="front-row"
+										class="checkbox__input _visually-hidden">
+									<span class="checkbox__span"></span>
+								</label>
+							</div>
+							<div class="ordering-form__checkbox ordering-form-checkbox">
+								<div class="ordering-form-checkbox__title">Задний ряд</div>
+								<label class="checkbox">
+									<input type="checkbox" name="back-row"
+										class="checkbox__input _visually-hidden">
+									<span class="checkbox__span"></span>
+								</label>
+							</div>
+							<div class="ordering-form__checkbox ordering-form-checkbox">
+								<div class="ordering-form-checkbox__title">Багажник / от 1000 р.</div>
+								<label class="checkbox">
+									<input type="checkbox" name="trunk"
+										class="checkbox__input _visually-hidden">
+									<span class="checkbox__span"></span>
+								</label>
+							</div>
+						</form>
+						<div class="ordering-gallery _gallery">
+							<a href="img/gallery/01.jpg" class="ordering-gallery__item ordering-gallery__item_big _ibg">
+								<img src="img/gallery/01.jpg" alt="Image">
+							</a>
+							<a href="img/gallery/02.jpg" class="ordering-gallery__item _ibg">
+								<img src="img/gallery/02.jpg" alt="Image">
+							</a>
+							<a href="img/gallery/03.jpg" class="ordering-gallery__item _ibg">
+								<img src="img/gallery/03.jpg" alt="Image">
+							</a>
+							<a href="img/gallery/04.jpg" class="ordering-gallery__item _ibg">
+								<img src="img/gallery/04.jpg" alt="Image">
+							</a>
+							<a href="img/gallery/05.jpg" class="ordering-gallery__item _ibg">
+								<img src="img/gallery/05.jpg" alt="Image">
+							</a>
+							<a href="img/gallery/06.jpg" class="ordering-gallery__item _ibg">
+								<img src="img/gallery/06.jpg" alt="Image">
+							</a>
+							<a href="img/gallery/07.jpg" class="ordering-gallery__item _ibg">
+								<img src="img/gallery/07.jpg" alt="Image">
+							</a>
+						</div>
+					</div>
+					<!--TODO:Поменять, чтобы зависело от выбранных позиций-->
+					<div class="ordering__footer footer-ordering">
+						<div class="footer-ordering__item item-ordering-footer">
+							<div class="item-ordering-footer__title">Ваш заказ:</div>
+							<ul class="item-ordering-footer__list">
+								<li>Комплект ковриков для переднего и заднего ряда</li>
+								<li>Коврик для багажника</li>
+								<li>Подпятник</li>
+								<li>Фирменные шильды 5 шт.</li>
+							</ul>
+						</div>
+						<div class="footer-ordering__item item-ordering-footer item-ordering-footer_row">
+							<div class="item-ordering-footer__content">
+								<div class="item-ordering-footer__title">Сумма заказа:</div>
+								<div class="item-ordering-footer__text">3150 р. + багажник</div>
+							</div>
+							<button type="button" data-message="order"
+								class="item-ordering-footer__button btn btn_green">
+								Отправить заказ
+							</button>
+						</div>
+					</div>
+					<div class="section__roll-up">
+						<button type="button" class="roll-up">
+							<div class="roll-up__icon">
+								<img src="img/icons/arrow.svg" alt="Наверх">
+							</div>
+							<div class="roll-up__text">Свернуть</div>
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="page__info info section">
+		<div class="section__container _container ">
+			<div class="section__wrapper">
+				<button type="button" class="ordering__spoller-button spoller-button title" data-spoller><span>как получить</span> заказ</button>
+				<div class="info__body">
+					<div class="section__text">
+						<p>Сделайте заказ на сайте или по телефону, затем вы сможете получить его удобным вам
+							способом:</p>
+					</div>
+					<div class="info__rows rows-info">
+						<div class="rows-info__item">
+							<figure class="rows-info__image">
+								<img src="img/info/handshake.svg" alt="">
+								<figcaption class="rows-info__image-caption">Самовывоз с оплатой<br>при
+									получении заказа</figcaption>
+							</figure>
+						</div>
+						<div class="rows-info__item">
+							<figure class="rows-info__image">
+								<img src="img/info/taxi.svg" alt="">
+								<figcaption class="rows-info__image-caption">Курьерская доставка по городу,<br>
+									после полной предоплаты</figcaption>
+							</figure>
+						</div>
+						<div class="rows-info__item">
+							<figure class="rows-info__image">
+								<img src="img/info/box.svg" alt="">
+								<figcaption class="rows-info__image-caption">Отправка по России,<br> после
+									полной предоплаты</figcaption>
+							</figure>
+						</div>
+					</div>
+					<form action="https://echo.htmlacademy.ru/" method="POST" id="info-form"
+						class="info__form form-info">
+						<h2 class="form-info__title title"><span>ЗАКАЖИТЕ</span> ЗВОНОК:</h2>
+						<input autocomplete="off" type="text" name="username" data-value="Ваше имя:"
+							class=" form-info__input">
+						<input type="tel" name="phone" data-value="Номер телефона:"
+							class="form-info__input _phone">
+						<button type="submit" class="form-info__button btn btn_green">Отправить</button>
+					</form>
+					<div class="section__roll-up">
+						<button type="button" class="roll-up">
+							<div class="roll-up__icon">
+								<img src="img/icons/arrow.svg" alt="Наверх">
+							</div>
+							<div class="roll-up__text">Свернуть</div>
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="page__reviews reviews section">
+		<div class="section__container reviews__container _container ">
+			<div class="section__wrapper reviews__wrapper">
+				<button type="button" class="reviews_spoller-button spoller-button title" data-spoller><span>Отзывы</span> клиентов</button>
+				<div class="reviews__body">
+					<div class="section__roll-up">
+						<button type="button" class="roll-up">
+							<div class="roll-up__icon">
+								<img src="img/icons/arrow.svg" alt="Наверх">
+							</div>
+							<div class="roll-up__text">Свернуть</div>
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+	</section>
+</main>
+@@include('_footer.html',{})
+</div>
+@@include('_popup.html',{})
+@@include('_js.html',{})
+</body>
+
+</html>

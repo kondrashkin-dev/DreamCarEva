@@ -1,0 +1,616 @@
+@use "sass:math";
+//<МИКСИНЫ>===============================================================================================
+@import "mixins";
+//</МИКСИНЫ>===============================================================================================
+
+//<ШРИФТЫ>===============================================================================================
+
+//<Подключаем шрифты>=======================================================================================
+@import "fonts";
+//</Подключаем шрифты>=======================================================================================
+
+//<Шрифт по умолчанию>==========================================================================================
+$fontFamily: "Times New Roman";
+$fontSize: 24;
+//</Шрифт по умолчанию>==========================================================================================
+
+//</ШРИФТЫ>=======================================================================================================
+
+//<ПЕРЕМЕННЫЕ>==========================================================================================================
+$minWidth: 320px;
+$maxWidth: 1920; //ширина полотна
+$maxWidthContainer: 1270; //ширина ограничивающего контейнера + 30px
+$md1: $maxWidthContainer + 12;
+$md2: 991.98;
+$md3: 767.98;
+$md4: 479.98;
+
+$mainColor: #000000;
+
+//</ПЕРЕМЕННЫЕ>===========================================================================================================
+
+//<ОБНУЛЕНИЕ, ОБЩИЕ ПАРАМЕТРЫ>===============================================================================================
+@import "null";
+body {
+	color: $mainColor;
+	&._lock {
+		overflow: hidden;
+	}
+	@include adaptiv-value("font-size", 24, 16, 1);
+	line-height: 125%;
+}
+//</ОБНУЛЕНИЕ, ОБЩИЕ ПАРАМЕТРЫ>===============================================================================================
+
+//<ОБОЛОЧКА>===========================================================================================================
+.wrapper {
+	width: 100%;
+	min-height: 100%;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+	&._loaded {
+	}
+}
+//</ОБОЛОЧКА>===========================================================================================================
+
+//<ОСНОВНАЯ СЕТКА>===========================================================================================================
+._container {
+	max-width: $maxWidthContainer + px;
+	margin: 0 auto;
+	padding: 0 15px;
+}
+//</ОСНОВНАЯ СЕТКА>===========================================================================================================
+
+//<ПОДКЛЮЧЕНИЕ ФАЙЛОВ UI СТИЛЕЙ, ФОРМ И ГОТОВЫХ КЛАССОВ>====================================================================================================
+@import "forms";
+@import "ui";
+//</ПОДКЛЮЧЕНИЕ ФАЙЛОВ UI СТИЛЕЙ, ФОРМ И ГОТОВЫХ КЛАССОВ>====================================================================================================
+
+//<ПОДКЛЮЧЕНИЕ ФАЙЛОВ СТИЛЕЙ СТРАНИЦ И ЭЛЕМЕНТОВ>====================================================================================================
+@import "lightgallery";
+@import "popup";
+@import "header";
+@import "footer";
+//</ПОДКЛЮЧЕНИЕ ФАЙЛОВ СТИЛЕЙ СТРАНИЦ И ЭЛЕМЕНТОВ>====================================================================================================
+
+//<ОСНОВНОЙ БЛОК>====================================================================================================
+.page {
+	flex: 1 1 auto;
+	&__about {
+		padding-top: 110px;
+		@media (max-width: $md2+px) {
+			padding-top: 80px;
+		}
+		@media (max-width: $md3+px) {
+			padding-top: 50px;
+		}
+		@include adaptiv-value("padding-bottom", 134, 20, 1);
+	}
+	&__ordering {
+	}
+	&__info {
+	}
+	&__reviews {
+	}
+}
+//<БЛОК ABOUT>============================================================================================================================================
+.about {
+	&__container {
+		@media (min-width: $md2+px) {
+			display: flex;
+		}
+	}
+	&__content {
+		@media (min-width: $md2+px) {
+			flex: 0 0 440 / 1240 * 100%;
+			@include adaptiv-value("margin-right", 20, 0, 1);
+			margin-top: -14px;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+		}
+		@media (max-width: $md2+px) {
+			&:not(:last-child) {
+				@include adaptiv-value("margin-bottom", 27, 13, 1);
+				background: url('../img/');
+			}
+		}
+	}
+
+	&__title {
+		@media (max-width: $md4+px) {
+			span {
+				display: block;
+			}
+		}
+		@media (min-width: $md2+px) {
+			span {
+				display: block;
+			}
+		}
+		@media (max-width: $md2+px) {
+			@include adaptiv-value("margin-bottom", 20, 12, 1);
+		}
+	}
+
+	&__text {
+		@include adaptiv-value("font-size", 24, 16, 1);
+		line-height: 28 / 24 * 100%;
+		p {
+			&:not(:last-child) {
+				@include adaptiv-value("margin-bottom", 18, 14, 1);
+			}
+		}
+		@media (min-width: $md2+px) {
+			&:not(:last-child) {
+				margin-bottom: 8px;
+			}
+		}
+	}
+
+	&__button {
+		font-family: "Bebas";
+		text-transform: uppercase;
+		width: 100%;
+		border: 1px solid black;
+	}
+
+	&__slider {
+	}
+}
+.slider-about {
+	//чтобы не болел слайдер, когда он во флекс элементе или сам флекс элемент, также с гридом
+	min-width: 0;
+	position: relative;
+	&__body {
+		&._swiper {
+			@media (max-width: $md4+px) {
+				overflow: visible;
+			}
+		}
+		@media (max-width: $md2+px) {
+			@include adaptiv-value("padding-bottom", 30, 10, 1);
+		}
+		@media (max-width: $md4+px) {
+			&::before {
+				content: "";
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				transform: translateX(-100%);
+				background: #fff;
+				z-index: 5;
+			}
+		}
+	}
+	&__slide {
+		@media (min-width: $md2+px) {
+			height: 411px;
+			@include adaptiv-value("width", 246, 60, 1);
+		}
+		@media (max-width: $md2+px) {
+			@include adaptiv-value("height", 387, 234, 1);
+			width: 33.333%;
+		}
+		@media (max-width: $md4+px) {
+			width: 48%;
+		}
+	}
+	&__controls {
+		position: absolute;
+		padding-top: 54px;
+		width: 100%;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		@media (max-width: $md2+px) {
+			display: none;
+		}
+	}
+
+	&__pagination {
+		@media (max-width: $md4+px) {
+			display: none;
+		}
+	}
+
+	&__actions {
+	}
+}
+.about-actions {
+	@media (min-width: $md2+px) {
+		display: none;
+	}
+	display: flex;
+	.btn {
+		flex: 0 0 330 / 991 * 100%;
+		@media (min-width: $md3+px) {
+			margin-right: 16.55px;
+		}
+		@media (max-width: $md3+px) {
+			margin-right: 10px;
+		}
+		@media (max-width: $md4+px) {
+			flex: 0 0 48%;
+		}
+	}
+	&__button {
+		font-family: "Bebas";
+		text-transform: uppercase;
+	}
+}
+//========================================================================================================================================================
+//<БЛОК СОСТАВЛЕНИЯ ЗАКАЗА>========================================================================================================================================================
+.ordering {
+	&__body {
+	}
+
+	&__row {
+		@media (min-width: $md3+px) {
+			display: flex;
+		}
+		margin-bottom: 20px;
+	}
+
+	&__footer {
+	}
+}
+
+.ordering-gallery {
+	display: grid;
+	order: 1;
+	&__item {
+		padding-bottom: 68%;
+		&_big {
+			padding-bottom: 67%;
+		}
+	}
+	@media (min-width: $md3+px) {
+		flex: 0 0 609/1240 * 100%;
+		margin-right: 22px;
+		/*3 колонки*/
+		grid-template-columns: repeat(3, 193/609 * 100%);
+		@include adaptiv-value("gap", 16, 0, 1);
+
+		&__item {
+			&_big {
+				grid-column: span 3;
+			}
+		}
+	}
+	@media (max-width: $md3+px) {
+		grid-template-columns: 583/728 * 100% 129/728 * 100%;
+		grid-auto-flow: column;
+		grid-template-rows: repeat(4, auto);
+		@include adaptiv-value("column-gap", 16, 10, 1);
+		@include adaptiv-value("row-gap", 21, 10, 1);
+		justify-content: space-between;
+		&__item {
+			&_big {
+				grid-row: span 4;
+			}
+		}
+	}
+	@media (max-width: $md4+px) {
+		grid-template-columns: 100%;
+	}
+}
+
+.ordering-form {
+	order: 2;
+	border-bottom: 0.5px solid #000;
+	@media (min-width: $md4+px) {
+		border-top: 0.5px solid #000;
+		padding-top: 9px;
+	}
+
+	@media (max-width: $md3+px) {
+		@include adaptiv-value("margin-top", 20, 16, 1);
+	}
+
+	@media (min-width: $md3+px) {
+		flex: 1 1 auto;
+	}
+
+	&__title {
+		@include adaptiv-value("padding-bottom", 20, 10, 1);
+	}
+
+	&__cells {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		width: 250px;
+		margin-bottom: 20px;
+	}
+}
+
+.color-slider {
+	&:not(:last-child) {
+		margin-bottom: 20px;
+	}
+	@media (max-width: $md4+px) {
+		display: flex;
+		align-items: center;
+		margin: 0 -5px;
+	}
+	&__arrow {
+		height: 16px;
+		z-index: 2;
+		img {
+			object-fit: contain;
+		}
+		&.slider-arrow {
+			&_prev {
+				flex: 0 0 32px;
+				&.swiper-button-disabled {
+					display: none;
+				}
+			}
+			&_next {
+				flex: 0 0 33px;
+				&.swiper-button-disabled {
+					display: none;
+				}
+			}
+		}
+	}
+
+	&__body {
+		padding: 0 3px;
+		min-width: 0;
+		.swiper-wrapper {
+			display: grid;
+			grid-auto-flow: column;
+			grid-template-columns: repeat(auto-fit);
+			@media (min-width: $md4+px) {
+				gap: 14px;
+				grid-auto-flow: row;
+				grid-template-columns: repeat(auto-fit, minmax(38.66px, 1fr));
+			}
+			@media (min-width: $md3+px) {
+				padding-right: 34px;
+			}
+		}
+	}
+
+	&__slide {
+		position: relative;
+		height: 32px;
+		width: 29px;
+		@media (min-width: $md4+px) {
+			height: 44px;
+		}
+	}
+}
+
+.ordering-form-checkbox {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	border-top: 0.5px solid #000;
+	&__title {
+		@include adaptiv-value("padding-top", 17, 10, 1);
+		@include adaptiv-value("padding-bottom", 17, 10, 1);
+		@include adaptiv-value("font-size", 24, 16, 1);
+		line-height: 20/24 * 100%;
+	}
+}
+
+.ordering-form-quantity {
+	@extend .ordering-form-checkbox;
+	&__title {
+		@extend .ordering-form-checkbox__title;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+
+	&__input {
+		width: 1em;
+		margin-left: 2px;
+		color: inherit;
+	}
+
+	&__actions {
+		display: grid;
+		grid-template-columns: 13px 7px 13px;
+		user-select: none;
+		@include adaptiv-value("column-gap", 16, 13, 1);
+		@media (max-width: $md4+px) {
+			grid-template-columns: 9px 5px 9px;
+		}
+	}
+
+	&__minus {
+		cursor: pointer;
+	}
+
+	&__separator {
+	}
+
+	&__plus {
+		cursor: pointer;
+	}
+}
+
+.footer-ordering {
+	display: flex;
+	align-items: center;
+	column-gap: 27px;
+	padding: 25px;
+	background: #efefef;
+	@media (max-width: $md3+px) {
+		flex-wrap: wrap;
+	}
+	&__item {
+	}
+}
+
+.item-ordering-footer {
+	&:first-child {
+		flex: 1 0 50%;
+		@media (min-width: $md3+px) {
+			border-right: 0.5px solid #000000;
+			padding-right: 10px;
+		}
+		@media (max-width: $md3+px) {
+			border-bottom: 0.5px solid #000;
+			padding-bottom: 22px;
+		}
+	}
+	&_row {
+		display: flex;
+		justify-content: space-between;
+		@media (min-width: $md3+px) {
+			flex-wrap: wrap;
+			flex: 1 1 50%;
+		}
+		@media (max-width: $md3+px) {
+			flex: 1 1 auto;
+			padding-top: 20px;
+		}
+		@media (max-width: $md4+px) {
+			flex-wrap: wrap;
+		}
+		.item-ordering-footer__content {
+			@media (max-width: $md4+px) {
+				display: flex;
+				align-items: flex-end;
+				width: 100%;
+				padding-bottom: 20px;
+				margin-bottom: 20px;
+				border-bottom: 0.5px solid #000;
+			}
+		}
+		.item-ordering-footer__title {
+			margin: 0px 4px 0px 0px;
+		}
+	}
+
+	&__title {
+		font-weight: 700;
+		line-height: 32 / 24 * 100%;
+		@media (min-width: $md4+px) {
+			&:not(:last-child) {
+				margin: 0px 0px 10px 0px;
+			}
+		}
+	}
+
+	&__list {
+		li {
+			position: relative;
+			padding-left: 30px;
+			&::before {
+				content: "";
+				position: absolute;
+				top: 12px;
+				left: 0;
+				width: 24px;
+				height: 1px;
+				margin-right: 6px;
+				background: #000;
+			}
+		}
+	}
+
+	&__content {
+		@media (min-width: $md4+px) {
+			margin-right: 10px;
+		}
+		@media (max-width: $md2+px) and (min-width: $md3+px) {
+			margin-bottom: 20px;
+		}
+	}
+
+	&__text {
+	}
+
+	&__button {
+		min-width: 100%;
+		@media (min-width: $md4+px) {
+			min-width: 240px;
+		}
+		@include adaptiv-value("height", 55, 31, 1);
+	}
+}
+//========================================================================================================================================================
+.info {
+	&__rows {
+		@include adaptiv-value("margin-bottom", 24, 13, 1);
+	}
+	&__form {
+	}
+}
+.rows-info {
+	&__item {
+		width: 100%;
+		max-width: 727px;
+		margin-right: auto;
+		margin-left: auto;
+		@include adaptiv-value("padding-bottom", 33, 17, 1);
+		@include adaptiv-value("padding-top", 40, 20, 1);
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+		border-top: 0.5px solid #000000;
+		&:last-child {
+			border-bottom: 0.5px solid #000;
+		}
+	}
+
+	&__image {
+		img {
+			@include adaptiv-value("width", 176, 87, 1);
+			@include adaptiv-value("margin-bottom", 24, 17, 1);
+		}
+	}
+
+	&__image-caption {
+	}
+}
+.form-info {
+	width: 100%;
+	max-width: 727px;
+	margin-right: auto;
+	margin-left: auto;
+	&__title {
+		margin-bottom: 14px;
+	}
+	&__input {
+		display: block;
+		@include adaptiv-value("padding", 12, 10, 1);
+		color: #858585;
+		border: 1px solid #000000;
+		width: 100%;
+		margin-bottom: 10px;
+	}
+	&__button {
+		width: 100%;
+	}
+}
+//========================================================================================================================================================
+.reviews {
+	@include adaptiv-value("margin-bottom", 40, 20, 1);
+	&__body {
+	}
+	&__container {
+		@media (max-width: $md3+px) {
+			border-bottom: 0.5px solid #000000;
+		}
+	}
+	&__wrapper {
+		@media (min-width: $md3+px) {
+			border-bottom: 0.5px solid #000000;
+		}
+	}
+	&__image {
+		width: 100%;
+		padding-bottom: 50%;
+		background: url("../img/reviews/reviews-desktop.png") 0 0 no-repeat;
+		object-fit: contain;
+	}
+}
+//</ОСНОВНОЙ БЛОК>====================================================================================================

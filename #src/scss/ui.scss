@@ -1,0 +1,249 @@
+//<Общие стили>====================================================================================================
+.logo {
+	font-family: "Bebas";
+	@include adaptiv-value("font-size", 24, 16, 1);
+	line-height: 29 / 24 * 100%;
+	color: inherit;
+	&_white{
+		color: #fff;
+	}
+}
+
+.title{
+	font-family: "Bebas";
+	@include adaptiv-value("font-size", 60, 36, 1);
+	line-height: 72 / 60 * 100%;
+	text-transform: uppercase;
+}
+
+.section{
+	&__container{
+		@media (max-width:$md3+px){
+			border-top: 0.5px solid #000000;
+		}
+	}
+
+	&__wrapper{
+		@media (min-width:$md3+px){
+			border-top: 0.5px solid #000000;
+		}
+	}
+
+	&__text{
+		p{
+			&:not(:last-child) {
+				@include adaptiv-value("margin-bottom", 35, 14, 1);
+			}
+		}
+		&:not(:last-child) {
+			@include adaptiv-value("margin-bottom", 31, 14, 1);
+		}
+	}
+
+	&__roll-up{
+		text-align: center;
+		padding: 24px 0;
+	}
+}
+
+.spoller-button{
+	position: relative;
+	width: 100%;
+	
+	@include adaptiv-value("padding-top", 11, 7, 1);
+	@include adaptiv-value("padding-bottom", 11, 7, 1);
+
+	font-size: 24px;
+	line-height: 28 / 24 * 100%;
+	text-align: left;
+
+	transition: all 0.5s ease 0s;
+
+		&::after{
+			content: "";
+			position: absolute;
+			width: 14.83px;
+			height: 23.54px;
+			right: 0;
+			transform: rotate(180deg);
+			background: url("/img/icons/arrow.svg") 0 0 no-repeat;
+		}
+
+		&._active{
+			@include adaptiv-value("padding-top", 37, 19, 1);
+			&:not(:last-child) {
+				@include adaptiv-value("margin-bottom", 21, 10, 1);
+			}
+
+			@include adaptiv-value("font-size", 60, 36, 1);
+			line-height: 72 / 60 * 100%;
+
+			@media (max-width:$md4+px){
+				span{
+					display: block;
+				}
+			}
+
+			&::after{
+				display: none;
+			}
+		}
+}
+
+.roll-up {
+	cursor: pointer;
+	&__icon {
+		width: 15px;
+		height: 24px;
+		display: inline-flex;
+		justify-content: center;
+		transform: rotate(90deg);
+	}
+
+	&__text {
+		font-family: 'Bebas';
+	}
+}
+
+.slider-arrow {
+	cursor: pointer;
+		&_prev {
+		}
+
+		&_next {
+			transform: rotate(180deg);
+			text-align: left;
+		}
+}
+
+.swiper-pagination-bullets{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-wrap: wrap;//вдруг слайдов будет слишком до хрена
+}
+
+.swiper-pagination-bullet{
+	flex: 0 0 10px;
+	height: 10px;
+	display: flex; 
+	justify-content:center;
+	align-items: center;
+	position: relative;
+	cursor: pointer;
+	//Отступ безопасности
+	margin: 2px 0;
+	&:not(:last-child) {
+		margin-right: 12px;
+	}
+	&::after{
+		content: "";
+		width: 10px;
+		height: 10px;
+		background-color: #C4C4C4;
+		border-radius: 50%;
+		transition: background-color 0.3s ease 0s;
+	}
+}
+
+.swiper-pagination-bullet-active{
+	&::after{
+		background-color: #000000;
+	}
+}
+//<Общие стили>====================================================================================================
+
+//<ГОТОВЫЕ КЛАССЫ>========================================================================================================================================================================================================
+//========================================================================================================================================================
+._ibg {
+	position: relative;
+	img {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		object-fit: cover;
+	}
+}
+body.ie {
+	._ibg {
+		background-position: center;
+		background-size: cover;
+		background-repeat: no-repeat;
+	}
+	._ibg img {
+		width: 0;
+		height: 0;
+		opacity: 0;
+		visibility: hidden;
+	}
+}
+//========================================================================================================================================================
+//========================================================================================================================================================
+._tabs {
+}
+._tabs-item {
+}
+._tabs-block {
+	display: none;
+	&._active {
+		display: block;
+	}
+}
+//========================================================================================================================================================
+//========================================================================================================================================================
+._swiper {
+	overflow: hidden;
+	//.swiper-wrapper
+	.swiper-wrapper {
+		position: relative;
+		width: 100%;
+		height: 100%;
+		box-sizing: content-box;
+		display: flex;
+		transition-property: transform;
+	}
+	&.swiper-vertical {
+		.swiper-wrapper {
+			flex-direction: column;
+		}
+	}
+	&.swiper-autoheight {
+		.swiper-wrapper {
+			align-items: flex-start;
+		}
+	}
+}
+.swiper-initialized {
+	.swiper-slide {
+		flex-shrink: 0;
+		transition-property: transform;
+	}
+}
+.swiper-android .swiper-slide,
+.swiper-wrapper {
+	transform: translate3d(0px, 0, 0);
+}
+.swiper-button-lock {
+	display: none;
+}
+.swiper-pagination-fraction,
+.swiper-pagination-custom,
+.swiper-horizontal > .swiper-pagination-bullets,
+.swiper-pagination-bullets.swiper-pagination-horizontal {
+	width: 100%;
+}
+//========================================================================================================================================================
+//========================================================================================================================================================
+._visually-hidden{
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	border: 0;
+	padding: 0;
+	clip: rect(0 0 0 0);
+	overflow: hidden;
+}
+//</ГОТОВЫЕ КЛАССЫ>====================================================================================================

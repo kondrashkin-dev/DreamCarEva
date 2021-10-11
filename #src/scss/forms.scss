@@ -1,0 +1,248 @@
+//<BUTTONS>====================================================================================================
+.btn {
+	display: inline-flex;
+	justify-content:center;
+	align-items: center;
+	//Отступ безопасности
+	padding: 0px 15px;
+	@include adaptiv-value("min-height", 50, 30, 1);
+	text-align: center;
+	color: inherit;
+	@include adaptiv-value("font-size", 24, 16, 1);
+	line-height: 117%;
+	transition: all 0.3s ease 0s; 
+	&_green{
+		background-color: #00AB30;
+		color: #fff;
+	}
+	&_black {
+		background-color: #000;
+		color: #fff;
+	}
+}
+//</BUTTONS>====================================================================================================
+//Кастомные переключатели========================================================================================================================================================
+.radio {
+	cursor: pointer;
+	user-select: none;
+	&_cell{
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		position: relative;
+		margin-left: 28px + 7px;
+		@media (min-width:$md4+px){
+			margin-left: 38.66px + 7px;
+		}
+	}
+		&__input:checked+span{
+			border: 2px solid #00AB30;
+		}
+		&__input:disabled+span{
+			box-shadow: none;
+		}	
+		&__input:focus+span{
+			@media (min-width:$md4+px){
+				box-shadow: 0px 4px 4px rgba(0, 0, 0, 1);
+			}
+			box-shadow: 0px 2px 2px rgba(0, 0, 0, 1);
+		}
+		&__span{
+			position: absolute;
+			width: 38.66px;
+			height: 38.32px;
+			@media (max-width:$md4+px){
+				width: 28.66px;
+				height: 28.32px;
+			}
+			border-radius: 50%;
+			@media (min-width:$md4+px){
+				box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+			}
+			box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+			transition: box-shadow 0.9s ease 0s;
+			&_rhombus {
+				top: 50%;
+				left: -7px;
+				transform: translate(-100%, -50%);
+				background: url("../img/ordering/rhombus.png") center center no-repeat;
+			}
+			
+			&_honeycomb {
+				top: 50%;
+				left: -7px;
+				transform: translate(-100%, -50%);
+				background: url("../img/ordering/honeycomb.png") center center no-repeat;
+			}
+			
+			&_black {
+				background: #000 center center;
+			}
+
+			&_gray {
+				background: #7B7B7B center center;
+			}
+
+			&_brown {
+				background: #86603D center center;
+			}
+
+			&_latte {
+				background: #CB9E76 center center;
+			}
+
+			&_sand {
+				background: #E0C78F center center;
+			}
+
+			&_dark-green {
+				background: #1A443C center center;
+			}
+
+			&_green {
+				background: #6EC306 center center;
+			}
+
+			&_burgundy {
+				background: #643131 center center;
+			}
+
+			&_red {
+				background: #C00E01 center center;
+			}
+
+			&_orange {
+				background: #D6601C center center;
+			}
+
+			&_yellow {
+				background: #EFBD22 center center;
+			}
+
+			&_blue {
+				background: #005EDB center center;
+			}
+
+			&_purple {
+				background: #6F1EB0 center center;
+			}
+
+			&_white {
+				background: #F5F5F5 center center;
+			}
+
+			&_light-gray {
+				background: #C4C4C4 center center;
+			}
+
+			&_cold-sand {
+				background: #F8F0C2 center center;
+			}
+
+			&_azure {
+				background: #20478C center center;
+			}
+
+			&_bright-blue {
+				background: #283DB4 center center;
+			}
+
+			&_turquoise {
+				background: #6DB3D5 center center;
+			}
+
+			&_сrimson {
+				background: #950E30 center center;
+			}
+
+			&_pink {
+				background: #FF78A5 center center;
+			}
+
+			&_light-green {
+				background: #9ECC6B center center;
+			}
+
+			&_blue-green {
+				background: #14B999 center center;
+			}
+		}
+}
+//========================================================================================================================================================
+//<CHECK (chk+tab)>====================================================================================================
+.checkbox {
+	@include adaptiv-value("height", 34, 25, 1);
+	position: relative;
+		&__input {
+			&:checked+span{
+				background: #00AB30;
+				&::before{
+					@include adaptiv-value("left", 33, 26, 1);
+				}
+			}
+			&:disabled+span{
+				&::before{
+					background:#8d8d8d;
+				}
+			}
+			&:focus+span{
+					@media (min-width:$md4+px){
+					box-shadow: 0px 4px 4px rgba(0, 0, 0, 1);
+					}
+					box-shadow: 0px 2px 2px rgba(0, 0, 0, 1);
+			}
+		}
+
+		&__span {
+			position: absolute;
+			top: 0;
+			right: 0;
+			@include adaptiv-value("width", 65, 48, 1);
+			@include adaptiv-value("height", 34, 25, 1);
+			background:#C4C4C4;
+			border-radius: 50px;
+			cursor: pointer;
+			transition: all 0.9s ease 0s;
+			&::before{
+				content: '';
+				position: absolute;
+				top: 50%;
+				@include adaptiv-value("left", 3, 2, 1);
+				@include adaptiv-value("width", 29, 20, 1);
+				@include adaptiv-value("height", 29, 20, 1);
+				transform: translate(0, -50%);
+				background: #fff;
+				border-radius: 50px;
+				transition: all 0.3s ease 0s;
+			}
+		}
+}
+//</CHECK>====================================================================================================
+
+//<INPUT>====================================================================================================
+	input[type="text"],
+	input[type="email"],
+	input[type="tel"],
+	textarea {
+		-webkit-appearance: none;
+		-moz-appearance: none;
+		appearance: none;
+		&:focus {
+			outline: none;
+		}
+	}
+	.input {
+		border-radius: 0 !important;
+		width: 100%;
+		display: block;
+		padding: 0px 20px;
+		&._focus {
+		}
+		&._error {
+		}
+	}
+	textarea.input {
+		resize: none;
+		padding: 0px 0px;
+	}
+//</INPUT>====================================================================================================
